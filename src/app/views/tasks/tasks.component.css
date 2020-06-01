@@ -1,0 +1,40 @@
+.completed{
+  text-decoration: line-through;
+}
+
+.delete-icon {
+  cursor: pointer;
+  color: #ea6561;
+  font-size: 18px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.edit-icon {
+  cursor: pointer;
+  color: #9A9A9A;
+  font-size: 18px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+/*::ng-deep .mat-focused .mat-form-field-label {*/
+/*  !*change color of label*!*/
+/*  color: #2756ad !important;*/
+/*}*/
+
+/*::ng-deep.mat-form-field-underline {*/
+/*  !*change color of underline*!*/
+/*  background-color: #2756ad !important;*/
+/*}*/
+
+/*::ng-deep.mat-form-field-ripple {*/
+/*  !*change color of underline when focused*!*/
+/*  background-color: #2756ad !important;;*/
+/*}*/
+
+/*.mat-form-field-hide-placeholder{*/
+/*  !*при вводе*!*/
+/*  color: white!important;*/
+/*}*/
+

@@ -1,0 +1,22 @@
+<mat-dialog-content>
+  <p mat-dialog-title>Редактирование приоритета</p>
+
+  <mat-form-field>
+    <mat-label>Наименование приоритета</mat-label>
+    <input #inputTitle matInput [(ngModel)]="tmpTitle" (keydown.enter)="mbOk()">
+    <button
+      (click)="tmpTitle= ''"
+      *ngIf="tmpTitle.trim().length > 0" aria-label="Clear" class="size25" mat-button
+      mat-icon-button matSuffix>
+      <mat-icon>clear</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <mat-dialog-actions>
+    <div class="col-12">
+      <button mat-raised-button [disabled]="inputTitle.value.trim().length==0" (click)="mbOk()">Сохранить</button>
+      <button mat-raised-button (click)="mbCancel()">Отмена</button>
+    </div>
+  </mat-dialog-actions>
+  <p>&nbsp;</p>
+</mat-dialog-content>

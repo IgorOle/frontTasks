@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/css/material-dashboard.css";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.size25 {
+  font-size: 25px !important;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.red {
+  color: red;
+}
+
+.link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.search-category-area {
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #8d939c;
+  border-radius: 4px
+}
+
+app-header{
+  width: 100%;
+}

@@ -1,0 +1,63 @@
+<div class="sidebar" data-color="purple" data-background-color="black" background-image="../../../ assets/img/sidebar-2.jpg">
+  <div class="sidebar-wrapper" id="categories">
+    <div class="logo">
+      <span class="nav-title title">Категории</span>
+      <span class="add-icon-area">
+        <button mat-icon-button class="add-icon title" (click)="openEditDialog(null)">
+          <mat-icon>add</mat-icon>
+        </button>
+      </span>
+      <ul class="nav">
+
+        <!--      поиск категорий -->
+         <div class="search-category-area">
+          <mat-form-field class="example-full-width">
+            <input
+              #inputSearchCategory
+              (keydown.escape)="searchCategoryTitle = ''; search()"
+              (keyup)="search()"
+              [(ngModel)]="searchCategoryTitle"
+              matInput
+              maxlength="256"
+              placeholder="Поиск категорий"
+            />
+
+            <button
+              (click)="searchCategoryTitle = ''; search()"
+              *ngIf="inputSearchCategory.value.trim().length > 0" aria-label="Clear"
+              class="search-category-button size25 gray"
+              mat-button
+              mat-icon-button
+              matSuffix
+            >
+              <mat-icon>clear</mat-icon>
+            </button>
+
+          </mat-form-field>
+
+        </div>
+
+        <li class="nav-item pointer" (click)="showTasksByCategory(null)"
+            [class.active]="selectedCategory==null"><a class="nav-link">Все</a></li>
+        <li class="nav-item pointer"
+            *ngFor="let category of categories; let curLine=index;"
+            (click)="showTasksByCategory(category)"
+            [class.active]="category==selectedCategory"
+            (mouseenter)="showEditIcon(curLine)"
+            (mouseleave)="showEditIcon(null)">
+          <a class="nav-link">
+            <span class="category-title">{{category.title}}</span>
+            <span class="edit-category-icon-area">
+            <mat-icon *ngIf="indexMouseMove === curLine"
+                      (click)="$event.stopPropagation(); openEditDialog(category)"
+                      class="edit-category-icon">
+              edit
+            </mat-icon>
+          </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sidebar-background"></div>
+</div>
